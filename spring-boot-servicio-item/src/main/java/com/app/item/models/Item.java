@@ -1,6 +1,6 @@
 package com.app.item.models;
 
-public class Item {
+public class Item{
  private Producto producto;
  private Integer cantidad;
  
