@@ -39,7 +39,7 @@ public class ProductoServiceImplement implements ProductoService{
 	@Override
 	@Transactional(readOnly = true)
 	public List<Producto> findAll(Producto model) {
-		return (List<Producto>) productoRepository.findAll();
+		return productoRepository.findAll();
 	}
 
 
