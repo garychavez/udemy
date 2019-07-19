@@ -16,12 +16,12 @@ public class ItemController {
 	@Autowired
 	private ItemService itemService;
 	
-	@GetMapping("/Get")
+	@GetMapping("/listar")
 	public List<Item> get(){
 		return itemService.findAll();	
 	}
 	
-	@GetMapping("/Get/{id}/cantidad/{cantidad}")
+	@GetMapping("/ver/{id}/cantidad/{cantidad}")
 	public Item detalle(@PathVariable Long id , @PathVariable Integer cantidad) {
 		return itemService.findById(id, cantidad);
 		

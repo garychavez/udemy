@@ -22,7 +22,7 @@ public class ItemServiceImplwement implements ItemService {
 
 	@Override
 	public List<Item> findAll() {
-		List<Producto> productos= Arrays.asList(clienteRest.getForObject("http://localhost:8001/swagger-ui.html#/producto-controller/findAllUsingGET", Producto[].class));
+		List<Producto> productos= Arrays.asList(clienteRest.getForObject("http://localhost:8001/Producto/Get", Producto[].class));
 		return productos.stream().map(p -> new Item(p,1)).collect(Collectors.toList());
 	}
 
@@ -30,7 +30,7 @@ public class ItemServiceImplwement implements ItemService {
 	public Item findById(Long id, Integer cantidad) {
 Map<String , String> pathVariable = new HashMap<String , String>();
 pathVariable.put("id",id.toString() )	;
-Producto producto= clienteRest.getForObject("http://localhost:8001/swagger-ui.html#/producto-controller/getUsingGET", Producto.class,pathVariable);
+Producto producto= clienteRest.getForObject("http://localhost:8001/Producto/Get/{id}", Producto.class,pathVariable);
 
 		return new Item(producto,cantidad);
 	}
