@@ -39,12 +39,12 @@ private ProductoService productoService;
 		productoService.delete(id);
 	}
 	
-	@GetMapping("/Get/{id}")
+	@GetMapping("/ver/{id}")
 	public  Optional<Producto> get(@PathVariable("id") Long id) {
 		return productoService.get(id);
 	}
 	
-	@GetMapping("/Get")
+	@GetMapping("/listar")
 	public List<Producto> findAll(){
 		return productoService.findAll(null);
 		
